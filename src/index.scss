@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  background: #111;
+  color: white;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  z-index: 1;
+  transition: all 0.5s ease-in;
+
+  .nav__logo {
+    width: 100px;
+  }
+
+  .nav__avatar {
+    width: 30px;
+  }
+
+  &.nav__black {
+    background-color: black;
+  }
+}
+
+.banner {
+  object-fit: contain;
+  height: 448px;
+
+  .banner__contents {
+    margin-left: 30px;
+    padding-top: 140px;
+    height: 190px;
+
+    .banner__title {
+      font-size: 3rem;
+      font-weight: 800;
+      padding-bottom: 0.3rem;
+    }
+
+    .banner__description {
+      width: 45rem;
+      line-height: 1.3rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      max-width: 360px;
+      height: 80px;
+    }
+
+    .banner__button {
+      cursor: pointer;
+      color: rgba(255,255,255,1);
+      outline: none;
+      border: none;
+      border-radius: 0.2vw;
+      font-weight: 700;
+      padding: 0.5rem 2rem;
+      margin-right: 1rem;
+      background-color: rgba(51,51,51,0.5);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255,255,255,0.5);
+        color: rgba(0,0,0,0.5);
+      }
+    }
+  }
+  .banner__fade_bottom {
+    height: 16.5rem;
+    background-image: linear-gradient(
+      180deg, 
+      transparent,
+      transparent,
+      rgba(17,17,17,0.8), 
+      rgba(17,17,17,1)
+    );
+  }
+}
+
+.row {
+  margin: 1.5rem 0 1.5rem 20px;
+
+  .row__posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-X: scroll;
+    padding: 20px;
+
+    .row__poster {
+      object-fit: contain;
+      width: 100%;
+      max-height: 150px;
+      margin-right: 10px;
+      transition: transform 300ms;
+
+      &_large {
+        max-height: 250px;
+
+        &:hover {
+          transform: scale(1.12);
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
